@@ -131,7 +131,7 @@ class BaseTrainer(BaseTrainer):
             model = self.model.module
         model.eval()
         if show_pbar:
-            data_loader = tqdm(data_loader, desc="Evaluating", leave=False)
+            data_loader = tqdm(data_loader, desc="Do an initial validation", leave=False)
         data_batches = []
         for it, data in enumerate(data_loader):
             data = self.start_of_iteration(data, current_iteration=self.current_iteration)

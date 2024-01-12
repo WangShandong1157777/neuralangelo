@@ -441,6 +441,7 @@ class BaseTrainer(object):
             total_loss = self.model_forward(data)
             # Scale down the loss w.r.t. gradient accumulation iterations.
             total_loss = total_loss / float(self.cfg.trainer.grad_accum_iter)
+            # print("total_loss: ", total_loss)
 
         # Backpropagate the loss.
         self.timer._time_before_backward()

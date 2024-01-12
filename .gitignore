@@ -1,4 +1,5 @@
 checkpoints
+.idea/
 
 # Other uncheckable file types
 *.zip

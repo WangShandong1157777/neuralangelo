@@ -49,6 +49,8 @@ def main():
     cfg_cmd = parse_cmdline_arguments(cfg_cmd)
     recursive_update_strict(cfg, cfg_cmd)
 
+    os.makedirs(os.path.dirname(args.output_file), exist_ok=True)
+
     # If args.single_gpu is set to True, we will disable distributed data parallel.
     if not args.single_gpu:
         # this disables nccl timeout
